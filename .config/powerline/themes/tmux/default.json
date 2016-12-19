@@ -1,0 +1,36 @@
+{
+	"segment_data": {
+		"powerline.segments.common.net.hostname": {
+			"before": "🏠 "
+		}
+	},
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.vcs.branch",
+				"priority": 10,
+				"args": {
+					"status_colors": false
+				}
+			},
+			{
+				"function": "powerline.segments.common.sys.uptime",
+				"priority": 50
+			},
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}

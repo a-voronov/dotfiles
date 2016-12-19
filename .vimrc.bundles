@@ -1,0 +1,137 @@
+" Environment {
+    " Basics {
+        set nocompatible        " Must be first line
+        set background=dark     " Assume a dark background
+    " }
+
+    " Setup {
+        " The next three lines ensure that the ~/.vim/bundle system works
+        filetype off
+        set rtp+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
+    " }
+
+    " Bundles {
+        " Deps {
+            " let Vundle manage Vundle, required
+            Plugin 'VundleVim/Vundle.vim'
+        " }
+
+        " General {
+            Plugin 'scrooloose/nerdtree'                " Directory tree
+            Plugin 'ctrlpvim/ctrlp.vim'                 " Full path fuzzy finder
+            Plugin 'altercation/vim-colors-solarized'   " Solarized colorscheme
+            Plugin 'gcmt/wildfire.vim'                  " Selecting inside text objects (⌥ ↑ in AppCode)
+            Plugin 'tpope/vim-surround'                 " Operations on surrounding text objects
+            Plugin 'tpope/vim-repeat'                   " Repeat not native operations
+            Plugin 'rhysd/conflict-marker.vim'          " Resolving merge conflicts easy
+            Plugin 'jiangmiao/auto-pairs'               " Insert/delete quotes parens brackets in pairs
+            " Plugin 'ctrlpvim/ctrlp.vim'
+            Plugin 'terryma/vim-multiple-cursors'       " Sublime-like text selections
+            " Plugin 'vim-scripts/sessionman.vim'
+            Plugin 'vim-airline/vim-airline'            " Statusline plugin
+            Plugin 'vim-airline/vim-airline-themes'     " Statusline themes
+            " Plugin 'jistr/vim-nerdtree-tabs'
+            Plugin 'airblade/vim-gitgutter'             " Shows git diff in gutter
+        " }
+    " }
+
+    " General Programming {
+        Plugin 'scrooloose/syntastic'                   " Syntax checking plugin
+        Plugin 'tpope/vim-fugitive'                     " Git wrapper
+        Plugin 'tpope/vim-commentary'                   " Comment stuff out
+        Plugin 'godlygeek/tabular'                      " Tabularize any items
+    " }
+
+    " Snippets & Autocomplete {
+        Plugin 'Shougo/neocomplete.vim.git'             " Keywords completion
+        Plugin 'Shougo/neosnippet'                      " Snippets support in Vim
+        Plugin 'Shougo/neosnippet-snippets'             " Snippets collection
+        Plugin 'benekastah/neomake'                     " Plugin for asynchronous :make using Neovim's job-control functionality
+        Plugin 'honza/vim-snippets'                     " Snippets for different languages
+    " }
+
+    " Programming Languages {
+        " Python {
+            " Pick either python-mode or pyflakes & pydoc
+            Plugin 'klen/python-mode'
+            Plugin 'yssource/python.vim'
+            Plugin 'python_match.vim'
+            Plugin 'pythoncomplete'
+        " }
+
+        " Javascript {
+            Plugin 'elzr/vim-json'
+            Plugin 'groenewege/vim-less'
+            Plugin 'pangloss/vim-javascript'
+            Plugin 'briancollins/vim-jst'
+            Plugin 'kchmck/vim-coffee-script'
+        " }
+
+        " Scala {
+            Plugin 'derekwyatt/vim-scala'
+            Plugin 'derekwyatt/vim-sbt'
+            Plugin 'xptemplate'
+        " }
+
+        " Haskell {
+            " Plugin 'travitch/hasksyn'
+            " Plugin 'dag/vim2hs'
+            " Plugin 'Twinside/vim-haskellConcealPlus'
+            " Plugin 'Twinside/vim-haskellFold'
+            " Plugin 'lukerandall/haskellmode-vim'
+            Plugin 'eagletmt/neco-ghc'
+            Plugin 'eagletmt/ghcmod-vim'
+            Plugin 'Shougo/vimproc.vim'
+            " Plugin 'adinapoli/cumino'
+            " Plugin 'bitc/vim-hdevtools'
+            Plugin 'mpickering/hlint-refactor-vim'
+            Plugin 'Twinside/vim-hoogle'
+        " }
+
+        " Swift {
+            Plugin 'keith/swift.vim'
+        " }
+
+        " HTML {
+            Plugin 'amirh/HTML-AutoCloseTag'
+            Plugin 'hail2u/vim-css3-syntax'
+            Plugin 'gorodinskiy/vim-coloresque'
+            Plugin 'tpope/vim-haml'
+            Plugin 'mattn/emmet-vim'
+        " }
+
+        " Ruby {
+            Plugin 'vim-ruby/vim-ruby'
+            Plugin 'tpope/vim-rails'
+            let g:rubycomplete_buffer_loading = 1
+            "let g:rubycomplete_classes_in_global = 1
+            "let g:rubycomplete_rails = 1
+        " }
+
+        " Go Lang {
+            "Plugin 'Blackrush/vim-gocode'
+            Plugin 'fatih/vim-go'
+        " }
+
+        " Elixir {
+            Plugin 'elixir-lang/vim-elixir'
+            Plugin 'carlosgaldino/elixir-snippets'
+            Plugin 'mattreduce/vim-mix'
+        " }
+
+        " Misc {
+            Plugin 'rust-lang/rust.vim'
+            Plugin 'tpope/vim-markdown'
+            Plugin 'JamshedVesuna/vim-markdown-preview'
+            Plugin 'spf13/vim-preview'
+            Plugin 'tpope/vim-cucumber'
+            Plugin 'cespare/vim-toml'
+            Plugin 'quentindecock/vim-cucumber-align-pipes'
+            Plugin 'saltstack/salt-vim'
+        " }
+
+    " Cleanup {
+        call vundle#end()
+    " }
+" }

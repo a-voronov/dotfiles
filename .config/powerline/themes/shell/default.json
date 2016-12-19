@@ -1,0 +1,10 @@
+{
+  "segments": {
+    "left": [
+      {
+        "function": "powerline.segments.common.env.cwd",
+        "before": "👽  "
+      }
+    ]
+  }
+}
