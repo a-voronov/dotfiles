@@ -1,8 +1,12 @@
-# Dotfiles
+# Dotfiles 👽
 ---
 My personal dotfiles for vim, tmux, haskell and solarized terminal on OS X 10.10+
 
+![Screenshot](Screenshot.png)
+
 ## Install
+
+Copy dotfiles to your $HOME directory.
 
 * First you need [ brew ]( http://brew.sh ) installed.
 
@@ -57,11 +61,13 @@ My personal dotfiles for vim, tmux, haskell and solarized terminal on OS X 10.10
     vim +PluginInstall +qall
     ```
 
-* Finally, reload bash settings for current running bash.
+* Now reload bash settings for current running bash.
 
     ```
     source ~/.bash_profile
     ```
+
+* And finally go to Terminal preferences and import `Solarized Dark.terminal` theme.
 
 ---
 
