@@ -236,6 +236,8 @@
             " Resolve ghcmod base directory
             au FileType haskell let g:ghcmod_use_basedir = getcwd()
 
+            autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
             " Type of expression under cursor
             nmap <silent> <leader>ht :GhcModType<CR>
             " Insert type of expression under cursor
@@ -404,9 +406,9 @@
 
     " syntastic {
         let g:syntastic_always_populate_loc_list = 1
-        let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
-        let g:syntastic_check_on_wq = 1
+        let g:syntastic_auto_loc_list = 0
+        let g:syntastic_check_on_open = 0
+        let g:syntastic_check_on_wq = 0
     " }
 " }
 

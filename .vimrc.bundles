@@ -94,7 +94,7 @@
         " }
 
         " HTML {
-            Plugin 'amirh/HTML-AutoCloseTag'
+            Plugin 'vim-scripts/HTML-AutoCloseTag'
             Plugin 'hail2u/vim-css3-syntax'
             Plugin 'gorodinskiy/vim-coloresque'
             Plugin 'tpope/vim-haml'
