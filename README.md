@@ -50,6 +50,7 @@ Copy dotfiles to your $HOME directory.
     stack install ghc-mod
     stack install hlint
     stack install hindent
+    stack install ghcid
     ```
 
 * After we have all needed components installed, we can go back to Vim and setup all of its plugins.
