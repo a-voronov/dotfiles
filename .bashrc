@@ -2,10 +2,10 @@
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH" #Add brew packages dir to PATH
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+export PATH="$PATH:/usr/local/lib/python2.7/site-packages"
 
 BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL   ]] && source $BASE16_SHELL
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Powerline setup
 export TERM="screen-256color"
@@ -17,7 +17,7 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 
-. "$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/bash/powerline.sh"
+. "/usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
