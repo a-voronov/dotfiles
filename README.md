@@ -16,4 +16,8 @@ Copy dotfiles to your $HOME directory.
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 
-* To install color themes, go to the Terminal preferences and import `OneDark.terminal` or `OneLight.terminal` there.
+* To apply macOS settings and Terminal color themes, run:
+
+    ```
+    sh .macos
+    ```
