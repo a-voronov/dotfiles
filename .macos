@@ -13,6 +13,9 @@ osascript -e 'tell application "System Preferences" to quit'
 # Use dark menubar and Dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
+# Disable 'Allow wallpaper tinting in windows', to avoid known issue in Big Sur
+defaults write NSGlobalDomain AppleReduceDesktopTinting -bool true
+
 # Disable "close windows when quitting an app" 
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true
 
@@ -264,6 +267,9 @@ defaults write com.apple.dock show-recents -bool false
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
+
+# Set DDG as default search engine
+defaults write NSGlobalDomain NSPreferredWebServices '{ NSWebServicesProviderWebSearch = { NSDefaultDisplayName = DuckDuckGo; NSProviderIdentifier = "com.duckduckgo"; }; }';
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
