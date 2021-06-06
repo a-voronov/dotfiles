@@ -18,21 +18,32 @@ git_prompt_info() {
 
 setopt promptsubst
 
+alias gti="git"
+alias :e="vim"
+alias ll='ls -alF'
+alias la='ls -A'
+
+# Sublime shortcut
+if [ -e "/Applications/Sublime Text.app" ]; then
+  alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+fi
+
 # Allow exported PS1 variable to override default prompt.
 if ! env | grep -q '^PS1='; then
   PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}👽 %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) \$ '
 fi
-
-# brew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
-
-# rvm
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
 # Load and run compinit
 autoload -U compinit && compinit -i
 
 # don't highlight pasted text
 unset zle_bracketed_paste
+
+# nix-shell shortcuts
+py-shell() {
+  nix-shell -p 'python38.withPackages(ps: with ps; [ "$*" ])'
+}
+
+rb-shell() {
+  nix-shell -p 'ruby.withPackages (ps: with ps; [ "$*" ])'
+}
