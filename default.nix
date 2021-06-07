@@ -17,6 +17,7 @@ let
       pkgs.cocoapods
       # will be missing after clean install, if not included here
       pkgs.nix
+      pkgs.cacert
       # Package to handle existing Gemfile-based projects
       # https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/ruby.section.md#using-an-existing-gemfile
       pkgs.bundix
