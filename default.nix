@@ -2,9 +2,11 @@
 # More here: www.nmattia.com/posts/2018-03-21-nix-reproducible-setup-linux-macos.html
 
 let
-  # Once it's clear how all of this works, move to using Niv github.com/nmattia/niv
-  # Also mentioned on official website nixos.org/guides/towards-reproducibility-pinning-nixpkgs.html
-  pkgs = import <nixpkgs> {};
+  # Using Niv github.com/nmattia/niv for pinned channels, more here: 
+  # nixos.org/guides/towards-reproducibility-pinning-nixpkgs.html
+  sources = import ./nix/sources.nix;
+  pkgs = import sources.nixpkgs {};
+  # pkgs = import <nixpkgs> {};
 
   # The list of packages to be installed
   homePkgs = with pkgs;
@@ -15,6 +17,7 @@ let
 
       pkgs.tree
       pkgs.cocoapods
+      pkgs.niv
       # will be missing after clean install, if not included here
       pkgs.nix
       pkgs.cacert
