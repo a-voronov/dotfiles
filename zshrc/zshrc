@@ -41,9 +41,9 @@ unset zle_bracketed_paste
 
 # nix-shell shortcuts
 py-shell() {
-  nix-shell -p 'python38.withPackages(ps: with ps; [ "$*" ])'
+  eval "nix-shell -p 'python38.withPackages(ps: with ps; [ "$@" ])'"
 }
 
 rb-shell() {
-  nix-shell -p 'ruby.withPackages (ps: with ps; [ "$*" ])'
+  eval "nix-shell -p 'ruby.withPackages(ps: with ps; [ "$@" ])'"
 }
