@@ -15,9 +15,14 @@ let
       zshrc
       git
 
+      pkgs.curl
+      pkgs.jq
       pkgs.tree
+      pkgs.cmake
+      pkgs.gradle
       pkgs.cocoapods
       pkgs.niv
+      pkgs.direnv
       # will be missing after clean install, if not included here
       pkgs.nix
       pkgs.cacert

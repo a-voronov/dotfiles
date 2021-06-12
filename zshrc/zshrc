@@ -47,3 +47,8 @@ py-shell() {
 rb-shell() {
   eval "nix-shell -p 'ruby.withPackages(ps: with ps; [ "$@" ])'"
 }
+
+# Hook direnv into zsh:
+# https://nixos.wiki/wiki/Development_environment_with_nix-shell
+# https://direnv.net/docs/hook.html
+eval "$(direnv hook zsh)"
