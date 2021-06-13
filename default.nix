@@ -22,6 +22,8 @@ let
       pkgs.gradle
       pkgs.cocoapods
       pkgs.niv
+      # Consider looking at https://github.com/nix-community/nix-direnv
+      # to make direnv snappier thanks to env cache
       pkgs.direnv
       # will be missing after clean install, if not included here
       pkgs.nix

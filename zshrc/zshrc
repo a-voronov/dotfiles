@@ -16,6 +16,14 @@ git_prompt_info() {
   fi
 }
 
+mark_nix_shell_prompt() {
+  if [ -z ${IN_NIX_SHELL+x} ]; then
+    echo ""
+  else
+    echo " %{$fg_bold[cyan]%}[nix-shell]%{$reset_color%}";
+  fi
+}
+
 setopt promptsubst
 
 alias gti="git"
@@ -30,7 +38,7 @@ fi
 
 # Allow exported PS1 variable to override default prompt.
 if ! env | grep -q '^PS1='; then
-  PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}👽 %{$fg_bold[blue]%}%~%{$reset_color%}$(git_prompt_info) \$ '
+  PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}👽 %{$fg_bold[blue]%}%~%{$reset_color%}$(mark_nix_shell_prompt)$(git_prompt_info) \$ '
 fi
 
 # Load and run compinit
