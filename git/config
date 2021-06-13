@@ -12,6 +12,8 @@
     insteadOf = https://github.com/
 [merge]
     tool = opendiff
+[pull]
+    rebase = false
 [core]
     excludesfile = SUBSTITUTE_GITIGNORE
     editor = vim
