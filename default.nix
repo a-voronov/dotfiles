@@ -2,52 +2,62 @@
 # More here: www.nmattia.com/posts/2018-03-21-nix-reproducible-setup-linux-macos.html
 
 let
-  # Using Niv github.com/nmattia/niv for pinned channels, more here: 
+  # Using Niv github.com/nmattia/niv for pinned channels, more here:
   # nixos.org/guides/towards-reproducibility-pinning-nixpkgs.html
   sources = import ./nix/sources.nix;
-  pkgs = import sources.nixpkgs {};
-  # pkgs = import <nixpkgs> {};
+  # Waiting for https://github.com/NixOS/nixpkgs/issues/95903
+  # Also check ~/.config/nix/nix.conf
+  armPkgs = import sources.nixpkgs { localSystem = "aarch64-darwin"; };
+  x86Pkgs = import sources.nixpkgs { localSystem = "x86_64-darwin"; };
 
   # The list of packages to be installed
-  homePkgs = with pkgs;
+  homeARMPkgs = with armPkgs;
     [
       # Customized packages
-      zshrc
-      git
+      homeZshrc
+      homeGit
 
-      pkgs.curl
-      pkgs.jq
-      pkgs.tree
-      pkgs.cmake
-      pkgs.gradle
-      pkgs.cocoapods
-      pkgs.niv
+      curl
+      jq
+      tree
+      cmake
+      gradle
+      cocoapods
       # Consider looking at https://github.com/nix-community/nix-direnv
       # to make direnv snappier thanks to env cache
-      pkgs.direnv
+      direnv
       # will be missing after clean install, if not included here
-      pkgs.nix
-      pkgs.cacert
+      nix
+      cacert
       # Package to handle existing Gemfile-based projects
       # https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/ruby.section.md#using-an-existing-gemfile
-      pkgs.bundix
+      bundix
+    ];
+
+  # Packages that don't support Apple Silicone yet
+  homeX86Pkgs = with x86Pkgs;
+    [
+      niv
       # GUI applications aren't automatically linked to ~/Applications directory
       # More here: https://github.com/NixOS/nix/issues/956
       # Hence no need to manage Slack or Discord with Nix
-      pkgs.emacs
+      emacs
     ];
+
+  pkgs = armPkgs;
+  homePkgs = homeARMPkgs ++ homeX86Pkgs;
 
   ## Some cunstomizations
 
   # A custom '.zshrc' (see zshrc/default.nix for details)
-  zshrc = import ./zshrc (with pkgs;
+  homeZshrc = import ./zshrc (with pkgs;
     { inherit
         writeScriptBin
         ;
     });
 
   # Git with config baked in
-  git = import ./git (with pkgs;
+  homeGit = import ./git (with pkgs;
     { inherit
         makeWrapper
         symlinkJoin
