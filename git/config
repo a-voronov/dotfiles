@@ -17,3 +17,5 @@
 [core]
     excludesfile = SUBSTITUTE_GITIGNORE
     editor = vim
+[advice]
+    addIgnoredFile = false
