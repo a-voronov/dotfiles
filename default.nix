@@ -23,6 +23,8 @@ let
       cmake
       gradle
       cocoapods
+      docker
+      openvpn
       # Consider looking at https://github.com/nix-community/nix-direnv
       # to make direnv snappier thanks to env cache
       direnv
