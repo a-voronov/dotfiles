@@ -16,13 +16,16 @@ let
       # Customized packages
       homeZshrc
       homeGit
-
+      # bash
       curl
       jq
       tree
       cmake
-      gradle
+      # iOS development
+      xcodes
       cocoapods
+      # misc development
+      gradle
       docker
       openvpn
       speedtest-cli
@@ -41,6 +44,7 @@ let
   homeX86Pkgs = with x86Pkgs;
     [
       niv
+      # cocoapods
       # GUI applications aren't automatically linked to ~/Applications directory
       # More here: https://github.com/NixOS/nix/issues/956
       # Hence no need to manage Slack or Discord with Nix

@@ -15,7 +15,7 @@ $ echo ". $HOME/.nix-profile/etc/profile.d/nix.sh" >> .zshrc
 $ # Pull the dotfiles
 $ git clone https://github.com/a-voronov/dotfiles && cd dotfiles
 $ # Setup Nix for M1 until it's supported out of the box (single-user mode)
-$ mkdir -p $HOME/.config/nix && cp nix.conf $HOME/.config/nix/nix.conf
+$ mkdir -p ~/.config/nix && cp nix.conf ~/.config/nix/nix.conf
 $ # Install Nix profile
 $ nix-env -if default.nix
 $ echo 'if [ -x "$(command -v zshrc)" ]; then $(zshrc); fi' >> .zshrc

@@ -488,7 +488,8 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Install Sublime Text settings and symlink to open from Terminal
 if [ -e "/Applications/Sublime Text.app" ]; then
-    cp -r ./Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+    cp -r ./Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text/Packages/User/Preferences.sublime-settings 2> /dev/null
+    echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofile
 fi
 
 ###############################################################################
