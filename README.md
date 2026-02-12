@@ -1,4 +1,4 @@
-# Dotfiles 👽
+# Dotfiles 🌞
 ---
 Reproducible set of dotfiles and macos configs for zsh terminal on OS X 11+.
 
@@ -22,6 +22,14 @@ $ echo 'if [ -x "$(command -v zshrc)" ]; then $(zshrc); fi' >> .zshrc
 $ # Apply macOS configs (will quit all affected applications, including Terminal)
 $ ./macos
 ```
+
+## Update
+
+In order to update nixpkgs to a newer version, run `niv update nixpkgs -b <version-branch>`.
+* Check https://github.com/NixOS/nixpkgs for the required release, i.e. `nixos-25.11`
+* Execute `niv update nixpkgs -b nixos-25.11` to update packages.
+* Execute `nix-env -if default.nix` to apply updates to nix.
+
 
 ## Credits
 

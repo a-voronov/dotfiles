@@ -1,5 +1,5 @@
 [user]
-    name = Alex Voronov
+    name = Oleksandr Voronov
     email = voronovaleksandr91@gmail.com
 [alias]
     co = checkout
@@ -19,3 +19,5 @@
     editor = vim
 [advice]
     addIgnoredFile = false
+[init]
+    defaultBranch = main

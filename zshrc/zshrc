@@ -38,7 +38,7 @@ fi
 
 # Allow exported PS1 variable to override default prompt.
 if ! env | grep -q '^PS1='; then
-  PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}👽 %{$fg_bold[blue]%}%~%{$reset_color%}$(mark_nix_shell_prompt)$(git_prompt_info) \$ '
+  PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}🌞 %{$fg_bold[blue]%}%~%{$reset_color%}$(mark_nix_shell_prompt)$(git_prompt_info) \$ '
 fi
 
 # Load and run compinit

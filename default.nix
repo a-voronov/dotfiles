@@ -1,4 +1,4 @@
-# Taken from initial version of Homies: github.com/nmattia/homies 
+# Taken from initial version of Homies: github.com/nmattia/homies
 # More here: www.nmattia.com/posts/2018-03-21-nix-reproducible-setup-linux-macos.html
 
 let
@@ -26,9 +26,9 @@ let
       cocoapods
       # misc development
       gradle
-      docker
+      # docker
       openvpn
-      speedtest-cli
+      # speedtest-cli
       # Consider looking at https://github.com/nix-community/nix-direnv
       # to make direnv snappier thanks to env cache
       direnv
@@ -38,6 +38,7 @@ let
       # Package to handle existing Gemfile-based projects
       # https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/ruby.section.md#using-an-existing-gemfile
       bundix
+      # niv
     ];
 
   # Packages that don't support Apple Silicone yet
@@ -48,7 +49,7 @@ let
       # GUI applications aren't automatically linked to ~/Applications directory
       # More here: https://github.com/NixOS/nix/issues/956
       # Hence no need to manage Slack or Discord with Nix
-      emacs
+      # emacs
     ];
 
   pkgs = armPkgs;
